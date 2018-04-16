@@ -1,0 +1,59 @@
+﻿@page
+@model Tikklok.IndexModel
+@namespace Tikklok.Models
+@{
+    string ActionClass(TikAction action)
+    {
+        return action == TikAction.Start ? "btn-success" : "btn-primary";
+    }
+}
+
+<div class="container">
+    <form method="post">
+        @Html.AntiForgeryToken()
+        <div class="form-group">
+            <input type="text" id="txtUserId" placeholder="username" class="form-control" asp-for="UserId" />
+        </div>
+        <div class="row">
+            <div class="col">
+                <button type="submit" class="btn btn-success btn-block" asp-page-handler="start">Start</button>
+            </div>
+            <div class="col">
+                <button type="submit" class="btn btn-primary btn-block" asp-page-handler="stop">Stop</button>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <button type="submit" id="btnRefresh" class="btn btn-second btn-block" asp-page-handler="refresh">Refresh</button>
+            </div>
+        </div>
+    </form>
+    <table class="table">
+        @foreach (var line in Model.Tiklines)
+        {
+            <tr>
+                <td>@line.UserId</td>
+                <td>@line.Time</td>
+                <td class="text-right">
+                    <button class="btn @ActionClass(line.Action)">
+                        @line.Action
+                    </button>
+                </td>
+            </tr>
+        }
+    </table>
+</div>
+<script type="text/javascript">
+    let txtUserId = document.getElementById('txtUserId');
+    txtUserId.addEventListener("change", function () {
+        if (txtUserId.value) {
+            localStorage.setItem("txtUserId", txtUserId.value);
+        }
+    });
+    
+    var userId = localStorage.getItem("txtUserId");
+    if (userId && !txtUserId.value) {
+        txtUserId.value = userId; 
+        document.getElementById('btnRefresh').click();
+    }
+</script>

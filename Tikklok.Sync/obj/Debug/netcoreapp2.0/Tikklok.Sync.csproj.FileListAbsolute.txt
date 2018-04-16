@@ -1,0 +1,11 @@
+C:\Users\berth\source\repos\Tikklok\Tikklok.Sync\obj\Debug\netcoreapp2.0\Tikklok.Sync.csproj.CoreCompileInputs.cache
+C:\Users\berth\source\repos\Tikklok\Tikklok.Sync\obj\Debug\netcoreapp2.0\Tikklok.Sync.AssemblyInfoInputs.cache
+C:\Users\berth\source\repos\Tikklok\Tikklok.Sync\obj\Debug\netcoreapp2.0\Tikklok.Sync.AssemblyInfo.cs
+C:\Users\berth\source\repos\Tikklok\Tikklok.Sync\bin\Debug\netcoreapp2.0\Tikklok.Sync.deps.json
+C:\Users\berth\source\repos\Tikklok\Tikklok.Sync\bin\Debug\netcoreapp2.0\Tikklok.Sync.runtimeconfig.json
+C:\Users\berth\source\repos\Tikklok\Tikklok.Sync\bin\Debug\netcoreapp2.0\Tikklok.Sync.runtimeconfig.dev.json
+C:\Users\berth\source\repos\Tikklok\Tikklok.Sync\bin\Debug\netcoreapp2.0\Tikklok.Sync.dll
+C:\Users\berth\source\repos\Tikklok\Tikklok.Sync\bin\Debug\netcoreapp2.0\Tikklok.Sync.pdb
+C:\Users\berth\source\repos\Tikklok\Tikklok.Sync\obj\Debug\netcoreapp2.0\Tikklok.Sync.dll
+C:\Users\berth\source\repos\Tikklok\Tikklok.Sync\obj\Debug\netcoreapp2.0\Tikklok.Sync.pdb
+C:\Users\berth\source\repos\Tikklok\Tikklok.Sync\obj\Debug\netcoreapp2.0\Tikklok.Sync.csprojResolveAssemblyReference.cache
