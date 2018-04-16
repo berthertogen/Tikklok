@@ -7,7 +7,12 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Tikklok", "Tikklok\Tikklok.
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Tikklok.Tests", "Tikklok.Tests\Tikklok.Tests.csproj", "{AEFEADD8-CEB3-47E9-BEDC-7C57C1A0F73D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tikklok.Sync", "Tikklok.Sync\Tikklok.Sync.csproj", "{6E93BB64-6CB3-4BF8-8526-725F60B1C024}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Tikklok.Sync", "Tikklok.Sync\Tikklok.Sync.csproj", "{6E93BB64-6CB3-4BF8-8526-725F60B1C024}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{6675F64F-A415-4E68-86A6-4CF36C31EB3A}"
+	ProjectSection(SolutionItems) = preProject
+		.gitignore = .gitignore
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
