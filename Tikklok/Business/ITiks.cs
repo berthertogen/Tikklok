@@ -6,8 +6,9 @@ using Tikklok.Models;
 
 namespace Tikklok.Business
 {
-    public interface ITikked
+    public interface ITiks
     {
-        IEnumerable<Tikline> Tiks(string userid);
+        void Insert(string userid, TikAction action);
+        IEnumerable<Tikline> Get(string userid);
     }
 }

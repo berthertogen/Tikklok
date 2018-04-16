@@ -8,17 +8,17 @@ using Xunit;
 
 namespace Tikklok.Tests
 {
-    public class Tikker_Tik
+    public class Tiks_Insert
     {
         [Fact]
         public void Should_Add()
         {
             // Arrange
             var repo = new Mock<ITiklineDb>();
-            var tikker = new Tikker(repo.Object, () => new DateTime(2018,1,1,8,0,0));
+            var tikker = new Tiks(repo.Object, () => new DateTime(2018,1,1,8,0,0));
 
             // Act
-            tikker.Tik("ERTOGB", TikAction.Start);
+            tikker.Insert("ERTOGB", TikAction.Start);
 
             // Assert
             var expected = new Tikline {
@@ -39,10 +39,10 @@ namespace Tikklok.Tests
                 new Tikline{ UserId = "ERTOGB", Time = new DateTime(2018,1,1), Action = TikAction.Start }
             };
             repo.Setup(r => r.Get("ERTOGB")).Returns(tiklines);
-            var tikker = new Tikker(repo.Object, () => new DateTime(2018, 1, 1, 8, 0, 0));
+            var tikker = new Tiks(repo.Object, () => new DateTime(2018, 1, 1, 8, 0, 0));
 
             // Act
-            tikker.Tik("ERTOGB", TikAction.Start);
+            tikker.Insert("ERTOGB", TikAction.Start);
 
             // Assert
             repo.Verify(r => r.Get("ERTOGB"));

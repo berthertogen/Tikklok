@@ -9,18 +9,16 @@ namespace Tikklok
 {
     public class IndexModel : PageModel
     {
-        readonly ITikked _tikked;
-        readonly ITikker _tikker;
+        readonly ITiks _tiks;
 
         public IEnumerable<Tikline> Tiklines { get; set; }
 
         [BindProperty]
         public string UserId { get; set; }
 
-        public IndexModel(ITikked tikked, ITikker tikker)
+        public IndexModel(ITiks tiks)
         {
-            _tikked = tikked;
-            _tikker = tikker;
+            _tiks = tiks;
         }
         
         public void OnGet()
@@ -31,7 +29,7 @@ namespace Tikklok
             }
             else
             {
-                Tiklines = _tikked.Tiks(UserId).OrderByDescending(t => t.Time);
+                Tiklines = _tiks.Get(UserId).OrderByDescending(t => t.Time);
             }
         }
 
@@ -43,7 +41,7 @@ namespace Tikklok
             }
             else
             {
-                Tiklines = _tikked.Tiks(UserId).OrderByDescending(t => t.Time);
+                Tiklines = _tiks.Get(UserId).OrderByDescending(t => t.Time);
             }
         }
 
@@ -54,8 +52,8 @@ namespace Tikklok
                 Tiklines = new List<Tikline>();
                 return;
             }
-            _tikker.Tik(UserId, TikAction.Start);
-            Tiklines = _tikked.Tiks(UserId).OrderByDescending(t => t.Time);
+            _tiks.Insert(UserId, TikAction.Start);
+            Tiklines = _tiks.Get(UserId).OrderByDescending(t => t.Time);
         }
 
         public void OnPostStop()
@@ -65,8 +63,8 @@ namespace Tikklok
                 Tiklines = new List<Tikline>();
                 return;
             }
-            _tikker.Tik(UserId, TikAction.Stop);
-            Tiklines = _tikked.Tiks(UserId).OrderByDescending(t => t.Time);
+            _tiks.Insert(UserId, TikAction.Stop);
+            Tiklines = _tiks.Get(UserId).OrderByDescending(t => t.Time);
         }
 
     }

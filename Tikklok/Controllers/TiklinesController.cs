@@ -7,9 +7,9 @@ namespace Tikklok.Controllers
     [Route("api/Tiklines")]
     public class TiklinesController : Controller
     {
-        readonly ITikked _tikked;
+        readonly ITiks _tikked;
 
-        public TiklinesController(ITikked tikked)
+        public TiklinesController(ITiks tikked)
         {
             _tikked = tikked;
         }
@@ -21,7 +21,7 @@ namespace Tikklok.Controllers
             {
                 return BadRequest();
             }
-            return Ok(_tikked.Tiks(userid));
+            return Ok(_tikked.Get(userid));
         }
     }
 }

@@ -10,31 +10,29 @@ namespace Tikklok.Tests
         public void ShouldGetWithUserId()
         {
             // Arrange
-            var tikked = new Mock<ITikked>();
-            var tikker = new Mock<ITikker>();
-            var page = new IndexModel(tikked.Object, tikker.Object);
+            var tiks = new Mock<ITiks>();
+            var page = new IndexModel(tiks.Object);
             page.UserId = "ERTOGB";
 
             // Act
             page.OnGet();
 
             // Assert
-            tikked.Verify(r => r.Tiks("ERTOGB"));
+            tiks.Verify(r => r.Get("ERTOGB"));
         }
         [Fact]
         public void ShouldNotGetWithoutUserId()
         {
             // Arrange
-            var tikked = new Mock<ITikked>();
-            var tikker = new Mock<ITikker>();
-            var page = new IndexModel(tikked.Object, tikker.Object);
+            var tiks = new Mock<ITiks>();
+            var page = new IndexModel(tiks.Object);
             page.UserId = null;
 
             // Act
             page.OnGet();
 
             // Assert
-            tikked.VerifyNoOtherCalls();
+            tiks.VerifyNoOtherCalls();
         }
     }
 }

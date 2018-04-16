@@ -21,8 +21,7 @@ namespace Tikklok
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddTransient<ITikker, Tikker>();
-            services.AddTransient<ITikked, Tikked>();
+            services.AddTransient<ITiks, Tiks>();
             services.AddTransient<ITiklineDb, TiklineDb>();
             Func<DateTime> now = () => DateTime.Now;
             services.AddSingleton(now);

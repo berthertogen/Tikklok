@@ -12,14 +12,14 @@ namespace Tikklok.Tests
         public void ShouldGetWithUserId()
         {
             // Arrange
-            var tikked = new Mock<ITikked>();
+            var tikked = new Mock<ITiks>();
             var controller = new TiklinesController(tikked.Object);
 
             // Act
             var result = controller.Get("ERTOGB");
 
             // Assert
-            tikked.Verify(r => r.Tiks("ERTOGB"));
+            tikked.Verify(r => r.Get("ERTOGB"));
             Assert.IsType<OkObjectResult>(result);
         }
 
@@ -27,7 +27,7 @@ namespace Tikklok.Tests
         public void ShouldNotGetWithoutUserId()
         {
             // Arrange
-            var tikked = new Mock<ITikked>();
+            var tikked = new Mock<ITiks>();
             var controller = new TiklinesController(tikked.Object);
 
             // Act

@@ -10,7 +10,7 @@ using Xunit;
 
 namespace Tikklok.Tests
 {
-    public class Tikked_Tiks
+    public class Tiks_Get
     {
         [Fact]
         public void Should_Get()
@@ -22,10 +22,10 @@ namespace Tikklok.Tests
                 new Tikline{ UserId = "ERTOGB", Time = new DateTime(2018,1,1), Action = TikAction.Start }
             };
             repo.Setup(r => r.Get("ERTOGB")).Returns(tiklines);
-            var tikker = new Tikked(repo.Object);
+            var tikker = new Tiks(repo.Object, () => new DateTime(2018, 1, 1, 8, 0, 0));
 
             // Act
-            var result = tikker.Tiks("ERTOGB");
+            var result = tikker.Get("ERTOGB");
 
             // Assert
             Assert.Equal(tiklines, result.ToList());
